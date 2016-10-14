@@ -1,5 +1,4 @@
 from flask import *
-from mongoengine import *
 from movie import Movie
 from mlab import *
 
