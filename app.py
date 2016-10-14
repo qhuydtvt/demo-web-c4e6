@@ -4,7 +4,7 @@ from movie import Movie
 from mlab import *
 
 app = Flask(__name__)
-connect(db=db_name, host=host, port=port, username=username, password=password)
+mlab_connect()
 
 @app.route('/')
 def index():
