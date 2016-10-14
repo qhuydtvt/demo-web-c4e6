@@ -5,6 +5,8 @@
 
 <link rel="stylesheet" href="../static/w3c.css">
 <link rel="stylesheet" href="../static/karma.css">
+<link rel="stylesheet" href="../static/stylesheet.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 .w3-sidenav a {padding:20px}
@@ -38,7 +40,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
       {%  for i in range(row_index * 4, row_index * 4 + 4)  %}
       {%  set movie = movies[i] %}
         <div class="w3-quarter">
-          <img src="{{ movie.img_link }}" alt="Sandwich" style="width:100%">
+            <div class="w3-display-container">
+                <img src="{{ movie.img_link }}" style="width:100%">
+                <div class="w3-display-topright w3-black w3-opacity rate-block">
+                    <i class="fa fa-star " style="color:yellow" ></i>
+                    <div>3.3</div>
+                </div>
+            </div>
             <h3>{{ movie.title }}</h3>
             <p>{{ movie.desc }}</p>
         </div>
