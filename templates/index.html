@@ -32,16 +32,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
 
   <!-- First Photo Grid-->
-  <div class="w3-row-padding w3-padding-16 w3-center" id="food">
-    {% for movie in movies %}
+  {%  set number_of_row = (movies|length) // 4 %}
+    {%  for row_index in range(0, number_of_row) %}
+        <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+      {%  for i in range(row_index * 4, row_index * 4 + 4)  %}
+      {%  set movie = movies[i] %}
         <div class="w3-quarter">
           <img src="{{ movie.img_link }}" alt="Sandwich" style="width:100%">
             <h3>{{ movie.title }}</h3>
             <p>{{ movie.desc }}</p>
         </div>
+      {% endfor %}
+  </div>
     {% endfor %}
 
-  </div>
 
   <!-- Second Photo Grid-->
 {#  <div class="w3-row-padding w3-padding-16 w3-center">#}
