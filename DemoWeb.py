@@ -18,7 +18,7 @@ movie2 = Movie(title = "Fast & furious", desc = "Hihi", img_link = TEST_IMG_LINK
 
 @app.route('/')
 def index():
-    return render_template("index.html", movies = [movie1, movie2])
+    return "Hi"
 
 
 if __name__ == '__main__':
